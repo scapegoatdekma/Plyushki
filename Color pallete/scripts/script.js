@@ -63,7 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
         if (changeBorder) {
-          h2.style.borderColor = clickedColor;
+          if (
+            computedStyle.backgroundImage &&
+            computedStyle.backgroundImage !== "none"
+          ) {
+            h2.style.borderImage = `${clickedColor} 1 1  stretch`;
+            h2.style.borderColor = "transparent";
+          } else {
+            h2.style.borderImage = `none`;
+            h2.style.borderColor = clickedColor;
+          }
         }
       });
       const sections = document.querySelectorAll("section");
@@ -93,7 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             }
             if (changeBorder) {
-              liElement.style.borderColor = clickedColor;
+              if (
+                computedStyle.backgroundImage &&
+                computedStyle.backgroundImage !== "none"
+              ) {
+                liElement.style.borderImage = `${clickedColor} 1 1  stretch`;
+                liElement.style.borderColor = "transparent";
+              } else {
+                liElement.style.borderImage = `none`;
+                liElement.style.borderColor = clickedColor;
+              }
             }
           });
         }

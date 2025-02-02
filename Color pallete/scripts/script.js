@@ -1,16 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
   const colorBoxes = document.querySelectorAll(".color-box");
-  const toggleTextCheckbox = document.getElementById("toggleText");
-  const toggleBorderCheckbox = document.getElementById("toggleBorder");
+  const toggleTextButton = document.getElementById("toggleText");
+  const toggleBorderButton = document.getElementById("toggleBorder");
 
   let changeText = true;
-  let changeBorder = false;
+  let changeBorder = true;
 
-  toggleTextCheckbox.addEventListener("change", function () {
-    changeText = this.checked;
+  toggleTextButton.addEventListener("click", function () {
+    changeText = !changeText;
+    if (changeText) {
+      toggleTextButton.classList.add("active");
+    } else {
+      toggleTextButton.classList.remove("active");
+    }
   });
-  toggleBorderCheckbox.addEventListener("change", function () {
-    changeBorder = this.checked;
+  toggleBorderButton.addEventListener("click", function () {
+    changeBorder = !changeBorder;
+    if (changeBorder) {
+      toggleBorderButton.classList.add("active");
+    } else {
+      toggleBorderButton.classList.remove("active");
+    }
   });
 
   colorBoxes.forEach((clickedBox) => {
@@ -33,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (clickedColor) {
         console.log(clickedColor);
       }
-
       const h2Elements = document.querySelectorAll("h2");
       h2Elements.forEach((h2) => {
         if (changeText) {
@@ -85,6 +94,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if (changeBorder) {
               liElement.style.borderColor = clickedColor;
+            }
+          });
+        }
+        if (section.querySelector(".shadows-container") && changeBorder) {
+          const allLiElements = section.querySelectorAll("ul li");
+          allLiElements.forEach((liElement) => {
+            const computedBoxShadow = getComputedStyle(liElement).boxShadow;
+            if (computedBoxShadow && computedBoxShadow !== "none") {
+              const shadowParts = computedBoxShadow.match(
+                /(-?\d+px|-?\d+)|(rgba?\(.+?\))|none/g
+              );
+              if (shadowParts) {
+                const newShadow = `${shadowParts[0]} ${shadowParts[1]} ${shadowParts[2]} ${clickedColor}`;
+                liElement.style.boxShadow = newShadow;
+              }
+            } else {
+              liElement.style.boxShadow = `0 0 2px 2px ${clickedColor}`;
             }
           });
         }

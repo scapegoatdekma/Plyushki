@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 html {
   font-size: 62.5%;
@@ -15,7 +16,10 @@ body {
   background-color: colors.$color--black; // Цвет фона страницы
   color: colors.$color--white; // Цвет текста по умолчанию
 }
-
+section {
+  max-width: 140rem;
+  margin: 0 auto;
+}
 h2 {
   margin-top: 20px;
   padding-bottom: 10px;
@@ -251,7 +255,8 @@ h2 {
 
 .font-size-sample {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 0.2rem solid #ddd;
+  border-radius: 15px;
 }
 .font-size--small {
   font-size: colors.$font-size--small;
@@ -270,11 +275,13 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 2rem;
 }
 
 .spacing-sample {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 0.2rem solid #ddd;
+  border-radius: 15px;
 }
 
 .spacing--20 {
@@ -300,14 +307,25 @@ h2 {
 }
 
 .shadows-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
+  gap: 10rem;
+  font-size: 2rem;
+  background-color: #ebebeb;
+  padding: 3rem 4rem;
+  border-radius: 3rem;
 }
 
 .shadow-sample {
   padding: 10px;
-  border: 1px solid #ddd;
+  height: 20rem;
+  border: 0.5rem solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  border-radius: 15px;
+  font-weight: 700;
 }
 .shadow-sample--natural {
   box-shadow: colors.$shadow--natural;

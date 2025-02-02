@@ -1,0 +1,326 @@
+@use "./fonts";
+@use "./colors" as colors;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "SergoeUI", sans-serif;
+  padding: 20px;
+  background-color: colors.$color--black; // Цвет фона страницы
+  color: colors.$color--white; // Цвет текста по умолчанию
+}
+
+h2 {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 10rem;
+  //   border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+
+.colors-container {
+  max-width: 140rem;
+  padding: 4rem 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60rem, 1fr));
+  gap: 2rem;
+  overflow-y: scroll;
+  max-height: 70rem;
+
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    colors.$color--black 40px,
+    colors.$color--black calc(100% - 100px),
+    transparent
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.color-box {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  //   border: 0.25rem solid #ddd;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6rem;
+  background-color: colors.$color--light-black;
+}
+
+.color-box__color {
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  border-radius: 6rem;
+}
+.color-box__text {
+  font-weight: 600;
+  font-size: 4rem;
+  padding: 1rem;
+  width: 100%;
+}
+.color-box__text--gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.color-box--black .color-box__color {
+  background-color: colors.$color--black;
+}
+.color-box--cyan-bluish-gray .color-box__color {
+  background-color: colors.$color--cyan-bluish-gray;
+}
+.color-box--white .color-box__color {
+  background-color: colors.$color--white;
+  color: black;
+}
+.color-box--pale-pink .color-box__color {
+  background-color: colors.$color--pale-pink;
+}
+.color-box--vivid-red .color-box__color {
+  background-color: colors.$color--vivid-red;
+}
+.color-box--luminous-vivid-orange .color-box__color {
+  background-color: colors.$color--luminous-vivid-orange;
+}
+.color-box--luminous-vivid-amber .color-box__color {
+  background-color: colors.$color--luminous-vivid-amber;
+}
+.color-box--light-green-cyan .color-box__color {
+  background-color: colors.$color--light-green-cyan;
+}
+.color-box--vivid-green-cyan .color-box__color {
+  background-color: colors.$color--vivid-green-cyan;
+}
+.color-box--pale-cyan-blue .color-box__color {
+  background-color: colors.$color--pale-cyan-blue;
+}
+.color-box--vivid-cyan-blue .color-box__color {
+  background-color: colors.$color--vivid-cyan-blue;
+}
+.color-box--vivid-purple .color-box__color {
+  background-color: colors.$color--vivid-purple;
+}
+.color-box--gradient--vivid-cyan-blue-to-vivid-purple .color-box__color {
+  background-image: colors.$gradient--vivid-cyan-blue-to-vivid-purple;
+}
+.color-box--gradient--light-green-cyan-to-vivid-green-cyan .color-box__color {
+  background-image: colors.$gradient--light-green-cyan-to-vivid-green-cyan;
+}
+.color-box--gradient--luminous-vivid-amber-to-luminous-vivid-orange
+  .color-box__color {
+  background-image: colors.$gradient--luminous-vivid-amber-to-luminous-vivid-orange;
+}
+.color-box--gradient--luminous-vivid-orange-to-vivid-red .color-box__color {
+  background-image: colors.$gradient--luminous-vivid-orange-to-vivid-red;
+}
+.color-box--gradient--very-light-gray-to-cyan-bluish-gray .color-box__color {
+  background-image: colors.$gradient--very-light-gray-to-cyan-bluish-gray;
+}
+.color-box--gradient--cool-to-warm-spectrum .color-box__color {
+  background-image: colors.$gradient--cool-to-warm-spectrum;
+}
+.color-box--gradient--blush-light-purple .color-box__color {
+  background-image: colors.$gradient--blush-light-purple;
+}
+.color-box--gradient--blush-bordeaux .color-box__color {
+  background-image: colors.$gradient--blush-bordeaux;
+}
+.color-box--gradient--luminous-dusk .color-box__color {
+  background-image: colors.$gradient--luminous-dusk;
+}
+.color-box--gradient--pale-ocean .color-box__color {
+  background-image: colors.$gradient--pale-ocean;
+}
+.color-box--gradient--electric-grass .color-box__color {
+  background-image: colors.$gradient--electric-grass;
+}
+.color-box--gradient--midnight .color-box__color {
+  background-image: colors.$gradient--midnight;
+}
+
+.color-box--black .color-box__text {
+  color: colors.$color--black;
+}
+.color-box--cyan-bluish-gray .color-box__text {
+  color: colors.$color--cyan-bluish-gray;
+}
+.color-box--white .color-box__text {
+  color: colors.$color--white;
+}
+.color-box--pale-pink .color-box__text {
+  color: colors.$color--pale-pink;
+}
+.color-box--vivid-red .color-box__text {
+  color: colors.$color--vivid-red;
+}
+.color-box--luminous-vivid-orange .color-box__text {
+  color: colors.$color--luminous-vivid-orange;
+}
+.color-box--luminous-vivid-amber .color-box__text {
+  color: colors.$color--luminous-vivid-amber;
+}
+.color-box--light-green-cyan .color-box__text {
+  color: colors.$color--light-green-cyan;
+}
+.color-box--vivid-green-cyan .color-box__text {
+  color: colors.$color--vivid-green-cyan;
+}
+.color-box--pale-cyan-blue .color-box__text {
+  color: colors.$color--pale-cyan-blue;
+}
+.color-box--vivid-cyan-blue .color-box__text {
+  color: colors.$color--vivid-cyan-blue;
+}
+.color-box--vivid-purple .color-box__text {
+  color: colors.$color--vivid-purple;
+}
+
+.color-box--gradient--vivid-cyan-blue-to-vivid-purple .color-box__text {
+  background-image: colors.$gradient--vivid-cyan-blue-to-vivid-purple;
+}
+.color-box--gradient--light-green-cyan-to-vivid-green-cyan .color-box__text {
+  background-image: colors.$gradient--light-green-cyan-to-vivid-green-cyan;
+}
+.color-box--gradient--luminous-vivid-amber-to-luminous-vivid-orange
+  .color-box__text {
+  background-image: colors.$gradient--luminous-vivid-amber-to-luminous-vivid-orange;
+}
+.color-box--gradient--luminous-vivid-orange-to-vivid-red .color-box__text {
+  background-image: colors.$gradient--luminous-vivid-orange-to-vivid-red;
+}
+.color-box--gradient--very-light-gray-to-cyan-bluish-gray .color-box__text {
+  background-image: colors.$gradient--very-light-gray-to-cyan-bluish-gray;
+}
+.color-box--gradient--cool-to-warm-spectrum .color-box__text {
+  background-image: colors.$gradient--cool-to-warm-spectrum;
+}
+.color-box--gradient--blush-light-purple .color-box__text {
+  background-image: colors.$gradient--blush-light-purple;
+}
+.color-box--gradient--blush-bordeaux .color-box__text {
+  background-image: colors.$gradient--blush-bordeaux;
+}
+.color-box--gradient--luminous-dusk .color-box__text {
+  background-image: colors.$gradient--luminous-dusk;
+}
+.color-box--gradient--pale-ocean .color-box__text {
+  background-image: colors.$gradient--pale-ocean;
+}
+.color-box--gradient--electric-grass .color-box__text {
+  background-image: colors.$gradient--electric-grass;
+}
+.color-box--gradient--midnight .color-box__text {
+  background-image: colors.$gradient--midnight;
+}
+
+.font-sizes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.font-size-sample {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.font-size--small {
+  font-size: colors.$font-size--small;
+}
+.font-size--medium {
+  font-size: colors.$font-size--medium;
+}
+.font-size--large {
+  font-size: colors.$font-size--large;
+}
+.font-size--x-large {
+  font-size: colors.$font-size--x-large;
+}
+
+.spacings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spacing-sample {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.spacing--20 {
+  padding: colors.$spacing--20;
+}
+.spacing--30 {
+  padding: colors.$spacing--30;
+}
+.spacing--40 {
+  padding: colors.$spacing--40;
+}
+.spacing--50 {
+  padding: colors.$spacing--50;
+}
+.spacing--60 {
+  padding: colors.$spacing--60;
+}
+.spacing--70 {
+  padding: colors.$spacing--70;
+}
+.spacing--80 {
+  padding: colors.$spacing--80;
+}
+
+.shadows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shadow-sample {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.shadow-sample--natural {
+  box-shadow: colors.$shadow--natural;
+}
+.shadow-sample--deep {
+  box-shadow: colors.$shadow--deep;
+}
+.shadow-sample--sharp {
+  box-shadow: colors.$shadow--sharp;
+}
+.shadow-sample--outlined {
+  box-shadow: colors.$shadow--outlined;
+}
+.shadow-sample--crisp {
+  box-shadow: colors.$shadow--crisp;
+}

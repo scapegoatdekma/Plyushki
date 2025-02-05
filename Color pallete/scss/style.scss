@@ -16,7 +16,7 @@ body {
   background-color: colors.$color--black; // Цвет фона страницы
   color: colors.$color--white; // Цвет текста по умолчанию
 }
-section {
+.wrap {
   max-width: 140rem;
   margin: 0 auto;
 }
@@ -341,4 +341,50 @@ h2 {
 }
 .shadow-sample--crisp {
   box-shadow: colors.$shadow--crisp;
+}
+
+// ///////////////////////////////////////////////////////////
+
+.transperent-template {
+  max-width: 1080px;
+  height: 562px;
+  margin-top: 5rem;
+  padding: 4rem;
+  background-color: colors.$color--light-black;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 3rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    height: 63rem;
+  }
+  h1 {
+    font-size: 5.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+  }
+  p {
+    font-weight: 400;
+    font-size: 3.2rem;
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  .button {
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    border: 2px solid white;
+    width: 340px;
+    font-weight: 600;
+    &.active {
+    }
+  }
 }

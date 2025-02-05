@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+.product img {
+  max-height: 200px;
+}

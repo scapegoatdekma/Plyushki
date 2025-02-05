@@ -54,11 +54,11 @@ html {
 body {
   font-family: "SergoeUI", sans-serif;
   padding: 20px;
-  background-color: #030307;
+  background-color: #030306;
   color: #ffffff;
 }
 
-section {
+.wrap {
   max-width: 140rem;
   margin: 0 auto;
 }
@@ -83,8 +83,8 @@ h2 {
   padding-right: 5px;
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #030307 40px, #030307 calc(100% - 100px), transparent);
-          mask-image: linear-gradient(to bottom, transparent, #030307 40px, #030307 calc(100% - 100px), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #030306 40px, #030306 calc(100% - 100px), transparent);
+          mask-image: linear-gradient(to bottom, transparent, #030306 40px, #030306 calc(100% - 100px), transparent);
   -webkit-mask-size: 100% 100%;
           mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
@@ -134,7 +134,7 @@ h2 {
 }
 
 .color-box--black .color-box__color {
-  background-color: #030307;
+  background-color: #030306;
 }
 
 .color-box--cyan-bluish-gray .color-box__color {
@@ -231,7 +231,7 @@ h2 {
 }
 
 .color-box--black .color-box__text {
-  color: #030307;
+  color: #030306;
 }
 
 .color-box--cyan-bluish-gray .color-box__text {
@@ -435,4 +435,46 @@ h2 {
 
 .shadow-sample--crisp {
   box-shadow: 6px 6px 0px rgb(0, 0, 0);
+}
+
+.transperent-template {
+  max-width: 1080px;
+  height: 562px;
+  margin-top: 5rem;
+  padding: 4rem;
+  background-color: #11111c;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 3rem;
+}
+.transperent-template .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  height: 63rem;
+}
+.transperent-template h1 {
+  font-size: 5.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.transperent-template p {
+  font-weight: 400;
+  font-size: 3.2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.buttons .button {
+  font-size: 2rem;
+  padding: 2rem 4rem;
+  border: 2px solid white;
+  width: 340px;
+  font-weight: 600;
 }/*# sourceMappingURL=style.min.css.map */
